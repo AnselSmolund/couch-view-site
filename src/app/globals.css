@@ -1,9 +1,65 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+
+@font-face {
+  font-family: 'VCR';
+  src: url('/fonts/VcrEas-rX3K.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font-vcr {
+  font-family: 'VCR', sans-serif;
+}
+
+.font-helvetica {
+  font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+/* 👾 CRT Glow Effect */
+.glow-text {
+  text-shadow:
+    0 0 1px #0f0,
+    0 0 2px #0f0,
+    0 0 4px #0f0,
+    0 0 8px #0f0;
+}
+
+/* 📺 Scanline Overlay */
+.scanlines::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.1),
+    rgba(0, 0, 0, 0.1) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  pointer-events: none;
+  z-index: 20;
+}
+
+/* 🪩 VHS Flicker Border */
+.flicker-border {
+  border: 2px solid #00ff99;
+  animation: flicker 1.5s infinite;
+}
+
+@keyframes flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    opacity: 1;
+  }
+  20%, 22%, 24%, 55% {
+    opacity: 0.4;
+  }
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
- 
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
