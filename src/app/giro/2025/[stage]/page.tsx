@@ -1,7 +1,6 @@
 "use client";
 
 import StageTimelineNav from "@/components/stageTimelineNav";
-import { useParams } from "next/navigation";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import React, { use } from "react";

@@ -40,7 +40,7 @@ const stageHighlights = [
 export default function RecentEdits() {
   return (
     <section className="py-10 px-6">
-      <h2 className="text-3xl font-bold mb-6">Giro D'Italia 2025</h2>
+      <h2 className="text-3xl font-bold mb-6">Giro DItalia 2025</h2>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {stageHighlights.map((stage, index) => (
