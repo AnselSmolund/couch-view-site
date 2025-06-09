@@ -16,6 +16,7 @@ export const stageCollections: Record<
   {
     label: string;
     stages: StageHighlight[];
+    theme?: "rocky" | "pink" | "flemish" | "milanSanRemo"; // Add more themes as needed
   }
 > = {
   "milan-san-remo-2025": {
@@ -32,6 +33,7 @@ export const stageCollections: Record<
           "Mathieu van der Poel claimed victory at the 2025 Milan–San Remo with a devastating solo attack over the Poggio. As the select group crested the final climb, he launched clear with perfect timing, carving the descent with fearless precision. Despite a hard-charging chase from top sprinters behind, Van der Poel held his gap all the way to the Via Roma, taking his second win in La Classicissima with trademark aggression and flair.",
       },
     ],
+    theme: "milanSanRemo",
   },
   "paris-roubaix-2025": {
     label: "Paris–Roubaix 2025",
@@ -48,6 +50,7 @@ export const stageCollections: Record<
           "Mathieu van der Poel (Alpecin–Deceuninck) stormed to a third straight Paris–Roubaix victory on April 13, 2025, becoming the first rider since Francesco Moser to win three in a row. Launching his attack after a chaotic moment involving Tadej Pogačar’s crash and puncture, Van der Poel soloed through the Carrefour de l’Arbre with remarkable composure despite suffering a flat tire himself. He finished 1:18 ahead of Pogačar, with Mads Pedersen completing the podium after a bruising 259 km across the cobbles of northern France.",
       },
     ],
+    theme: "rocky",
   },
   "ronde-van-vlaanderen-2025": {
     label: "Ronde van Vlaanderen 2025",
@@ -64,6 +67,7 @@ export const stageCollections: Record<
           "Tadej Pogačar (UAE Team Emirates) powered to a dominant victory in the 109th Tour of Flanders on April 6, 2025. His decisive attack came on the second ascent of the Oude Kwaremont, and he rode solo over the final 18 km to the finish in Oudenaarde, crossing the line more than a minute ahead of strong chasers Mads Pedersen and Mathieu van der Poel. Pogačar became only the fourth rider in history to claim multiple Ronde titles, cementing his status as one of cycling’s all-time greats.",
       },
     ],
+    theme: "flemish",
   },
   "giro-2025": {
     label: "Giro d’Italia 2025",
@@ -141,6 +145,7 @@ export const stageCollections: Record<
           "Riders tackled a grueling 168 km mountain stage from Castel di Sangro to Tagliacozzo in the Apennines. Juan Ayuso (UAE Team Emirates) broke clear in the finale to take a sharp uphill solo win, highlighting his climbing prowess and GC ambitions.",
       },
     ],
+    theme: "pink",
   },
 };
 
