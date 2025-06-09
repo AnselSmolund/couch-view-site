@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function TVScreen() {
   return (
-    <div className="relative w-[440px] sm:w-[400px] md:w-[600px] mb-6 lg:mt-6 aspect-[1/0.95] mx-auto">
+    <div className="relative w-[300px] sm:w-[500px] md:w-[500px] lg:w-[600px] mb-6 lg:mt-6 aspect-[1/0.95] mx-auto">
       {/* Video window — stays same size and position */}
       <div
         style={{ inset: "25.8% 17.3% 12.5% 11.2%", marginInline: 0 }}

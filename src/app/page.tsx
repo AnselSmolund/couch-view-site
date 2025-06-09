@@ -15,7 +15,7 @@ export default function Home() {
         </section>
         <section className="w-full lg:w-1/2 flex flex-col gap-6 items-center lg:items-start">
           <div className="uppercase text-center lg:text-left">
-            <h1 className="text-5xl md:text-6xl font-bold text-[#008f4f] drop-shadow-[0_0_5px_rgba(0,143,79,0.6)] tracking-wider mb-2">
+            <h1 className="text-5xl md:text-[80px] md:text-6xl font-bold text-[#008f4f] drop-shadow-[0_0_5px_rgba(0,143,79,0.6)] tracking-wider mb-2">
               Couch View
             </h1>
             <p className="text-sm md:text-base text-[#1a1a1a] tracking-[0.2em]">
@@ -23,7 +23,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="w-full flex flex-col gap-4 mt-6">
+          <div className="w-full flex flex-col gap-4 mt-12">
             {Object.entries(stageCollections).map(
               ([slug, { label, stages }]) => {
                 const isSingleStage = stages.length === 1;
