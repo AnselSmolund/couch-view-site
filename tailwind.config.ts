@@ -13,8 +13,9 @@ const config: Config = {
       },
       colors: {
         vhsGreen: "#00ff99",
-        vhsPurple: "#d11aff",
         vhsBlue: "#00e0ff",
+        vhsPurple: "#a34fff",
+        vhsRed: "#ff2d2d",
         crtBlack: "#0a0a0a",
       },
       boxShadow: {
