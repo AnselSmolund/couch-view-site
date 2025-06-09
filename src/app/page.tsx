@@ -1,40 +1,48 @@
+"use client";
+
+import Link from "next/link";
 import React from "react";
-import RecentEdits from "./recentEdits";
+import { stageCollections } from "@/app/data";
+import TVScreen from "@/components/TVScreen";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen bg-crtBlack text-vhsRed font-vcr scanlines flex flex-col">
-      {/* Content Wrapper */}
-      <main className="flex-grow px-4 py-8 md:px-16 lg:px-32 text-center flex flex-col gap-10 items-center">
-        {/* Title */}
-        <h1 className="text-4xl text-vhsPurple glow-text tracking-widest mb-4">
-          COUCH VIEW CYCLING CLIPS
-        </h1>
+    <div className="min-h-screen bg-gradient-to-br from-[#fff8dc] via-[#f6e6a5] to-[#ffef99] text-[#1a1a1a] font-vcr">
+      {" "}
+      <main className="relative z-20 px-6 py-16 max-w-7xl mx-auto flex flex-col lg:flex-row items-start gap-1">
+        <section className="w-full lg:w-1/2 flex-shrink-0">
+          <TVScreen />
+        </section>
+        <section className="w-full lg:w-1/2 flex flex-col gap-6 items-center lg:items-start">
+          <div className="uppercase text-center lg:text-left">
+            <h1 className="text-5xl md:text-6xl font-bold text-[#008f4f] drop-shadow-[0_0_5px_rgba(0,143,79,0.6)] tracking-wider mb-2">
+              Couch View
+            </h1>
+            <p className="text-sm md:text-base text-[#1a1a1a] tracking-[0.2em]">
+              Cycling Clips
+            </p>
+          </div>
 
-        {/* Hero Video */}
-        <section className="relative bg-black p-2 rounded-xl shadow-vhs-glow border-2 flicker-border max-w-[720px] w-full">
-          <div className="aspect-[4/3] border-2 border-gray-900 overflow-hidden shadow-[0_0_80px_rgba(0,255,0,0.3)] relative">
-            <video
-              src="/videos/giro2025.mov"
-              autoPlay
-              muted
-              loop
-              playsInline
-              className="w-full h-full object-cover"
-            />
+          <div className="w-full flex flex-col gap-4 mt-6">
+            {Object.entries(stageCollections).map(
+              ([slug, { label, stages }]) => {
+                const isSingleStage = stages.length === 1;
+                const href = isSingleStage
+                  ? `/collections/${slug}/${stages[0].slug}` // ➡️ go straight to the stage
+                  : `/collections/${slug}`; // ➡️ open full collection
+
+                return (
+                  <Link href={href} key={slug}>
+                    <button className="group w-full px-6 py-4 rounded-md uppercase tracking-widest text-sm bg-black border border-[#a34fff] text-[#a34fff] shadow-[0_0_8px_rgba(163,79,255,0.5)] hover:bg-[#2d0b38] hover:text-[#ff2d2d] transition-all duration-300 text-left">
+                      {label}
+                    </button>
+                  </Link>
+                );
+              }
+            )}
           </div>
         </section>
-
-        {/* Recent Edits */}
-        <section className="w-full max-w-[1080px] px-2">
-          <RecentEdits />
-        </section>
       </main>
-
-      {/* Footer */}
-      <footer className="text-center text-neutral-600 text-sm mt-12 pb-8">
-        <p>couch view</p>
-      </footer>
     </div>
   );
 }

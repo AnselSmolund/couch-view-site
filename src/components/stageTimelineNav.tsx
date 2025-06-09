@@ -3,14 +3,10 @@
 
 import Link from "next/link";
 import clsx from "clsx";
-
-type Stage = {
-  slug: string;
-  label: string;
-};
+import { StageHighlight } from "@/app/data";
 
 type Props = {
-  stages: Stage[];
+  stages: StageHighlight[];
   currentSlug: string;
 };
 
@@ -21,7 +17,7 @@ export default function StageTimelineNav({ stages, currentSlug }: Props) {
         {stages.map((stage) => (
           <li key={stage.slug}>
             <Link
-              href={`/giro/2025/${stage.slug}`}
+              href={`/collections/giro-2025/${stage.slug}`}
               className={clsx(
                 "px-4 py-2 rounded-full border text-sm font-medium transition-all",
                 stage.slug === currentSlug
@@ -29,7 +25,7 @@ export default function StageTimelineNav({ stages, currentSlug }: Props) {
                   : "border-muted text-muted-foreground hover:bg-muted"
               )}
             >
-              {stage.label}
+              {stage.stage}
             </Link>
           </li>
         ))}

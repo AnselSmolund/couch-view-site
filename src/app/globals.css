@@ -1,6 +1,11 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @font-face {
   font-family: 'VCR';
   src: url('/fonts/VcrEas-rX3K.ttf') format('truetype');
@@ -15,7 +20,6 @@
 .font-helvetica {
   font-family: 'Helvetica', 'Arial', sans-serif;
 }
-
 /* 👾 CRT Glow Effect */
 .glow-text {
   text-shadow:
@@ -56,9 +60,6 @@
   }
 }
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 @custom-variant dark (&:is(.dark *));
 
