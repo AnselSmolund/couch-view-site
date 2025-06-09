@@ -1,12 +1,11 @@
+"use client";
+
 import Link from "next/link";
 import { stageCollections } from "@/app/data";
 
 export default function CollectionsPage() {
   return (
     <div className="min-h-screen px-6 py-12 font-mono bg-gradient-to-br from-[#1e1e2f] via-[#2d0b38] to-[#0c0c1c] text-white relative overflow-hidden">
-      {/* Scanline Overlay */}
-      <div className="pointer-events-none fixed inset-0 z-10 bg-[repeating-linear-gradient(to_bottom,rgba(255,255,255,0.03)_0px,rgba(255,255,255,0.03)_1px,transparent_1px,transparent_2px)]" />
-
       <div className="max-w-4xl mx-auto relative z-20">
         <h1 className="text-4xl md:text-5xl text-center text-[#a34fff] drop-shadow-[0_0_5px_rgba(163,79,255,0.6)] tracking-widest mb-12">
           CHOOSE YOUR TAPE

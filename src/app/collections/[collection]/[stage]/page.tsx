@@ -1,32 +1,45 @@
+"use client";
+
 import { stageCollections } from "@/app/data";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
+import { use, useEffect, useRef } from "react";
 
-type Props = {
-  params: {
-    collection: string;
-    stage: string;
-  };
-};
+export default function StagePage({
+  params,
+}: {
+  params: Promise<{ collection: string; stage: string }>;
+}) {
+  const { collection, stage } = use(params); // ✅ unwrap the promise
 
-export default function StagePage({ params }: Props) {
-  const { collection, stage } = params;
   const data = stageCollections[collection];
+  useEffect(() => {
+    const video = videoRef.current;
+
+    if (video) {
+      video.play().catch((err) => console.warn("Autoplay failed:", err));
+    }
+
+    return () => {
+      if (video && !video.paused) {
+        video.pause();
+      }
+    };
+  }, []);
+
+  const videoRef = useRef<HTMLVideoElement | null>(null);
 
   if (!data) return notFound();
+
   const collectionData = stageCollections[collection];
   const currentStage = data.stages.find((s) => s.slug === stage);
   if (!currentStage) return notFound();
   const isSingleStageCollection = collectionData.stages.length === 1;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#ffe4ec] via-[#f6d1e5] to-[#ffebf2] text-[#1a1a1a] font-mono relative overflow-hidden">
-      {/* Scanlines */}
-      <div className="pointer-events-none fixed inset-0 z-10 bg-[repeating-linear-gradient(to_bottom,rgba(0,0,0,0.03)_0px,rgba(0,0,0,0.03)_1px,transparent_1px,transparent_2px)]" />
-
+    <div className="min-h-screen text-[#1a1a1a] relative overflow-hidden bg-gradient-to-br from-[#fff8dc] via-[#f6e6a5] to-[#ffef99]">
       <div className="max-w-6xl mx-auto px-4 py-10 relative z-20">
-        {/* Back link */}
         <Link
           href={isSingleStageCollection ? "/" : `/collections/${collection}`}
           className="text-[#8c6b00] hover:text-[#c29300] text-sm uppercase underline mb-6 inline-block"
@@ -42,6 +55,7 @@ export default function StagePage({ params }: Props) {
               controls
               className="w-full h-auto"
               autoPlay={true}
+              ref={videoRef}
             />
           </div>
 

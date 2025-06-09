@@ -41,6 +41,14 @@ export default function Home() {
               }
             )}
           </div>
+          <div className="mt-10 text-center">
+            <Link
+              href="/all-videos"
+              className="inline-block bg-green-400 text-black hover:bg-green-300 font-bold py-2 px-6 rounded-md border border-green-400 transition-all duration-200 tracking-wide"
+            >
+              📼 See All Videos
+            </Link>
+          </div>
         </section>
       </main>
     </div>
