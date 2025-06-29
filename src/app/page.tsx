@@ -22,7 +22,7 @@ export default function Home() {
               Cycling Clips
             </p>
           </div>{" "}
-          <div className="text-center">
+          <div className="text-center gap-2 lg:text-left flex flex-col lg:flex-row items-center lg:items-start">
             <Link
               href="/all-videos"
               className="inline-block bg-green-400 text-black hover:bg-green-300 font-bold py-2 px-6 rounded-md border border-green-400 transition-all duration-200 tracking-wide"
@@ -70,6 +70,12 @@ export default function Home() {
               className="inline-block bg-green-400 text-black hover:bg-green-300 font-bold py-2 px-6 rounded-md border border-green-400 transition-all duration-200 tracking-wide"
             >
               Instagram
+            </Link>
+            <Link
+              href="/tdf-preview"
+              className="inline-block bg-yellow-400 text-black hover:bg-green-300 font-bold py-2 px-6 rounded-md border border-green-400 transition-all duration-200 tracking-wide"
+            >
+              TDF PREVIEW
             </Link>
           </div>
         </section>
