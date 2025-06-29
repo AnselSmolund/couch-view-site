@@ -21,9 +21,16 @@ export default function Home() {
             <p className="text-sm md:text-base text-[#1a1a1a] tracking-[0.2em]">
               Cycling Clips
             </p>
+          </div>{" "}
+          <div className="text-center">
+            <Link
+              href="/all-videos"
+              className="inline-block bg-green-400 text-black hover:bg-green-300 font-bold py-2 px-6 rounded-md border border-green-400 transition-all duration-200 tracking-wide"
+            >
+              📼 See All Videos
+            </Link>
           </div>
-
-          <div className="w-full flex flex-col gap-4 mt-12">
+          <div className="w-full flex flex-col gap-4 mt-1">
             {Object.entries(stageCollections).map(
               ([slug, { label, stages, theme }]) => {
                 const isSingleStage = stages.length === 1;
@@ -51,13 +58,18 @@ export default function Home() {
               }
             )}
           </div>
-
-          <div className="mt-10 text-center">
+          <div className="mt-2 text-center flex flex-row gap-4">
             <Link
-              href="/all-videos"
+              href="mailto:couchviewcc@gmail.com"
               className="inline-block bg-green-400 text-black hover:bg-green-300 font-bold py-2 px-6 rounded-md border border-green-400 transition-all duration-200 tracking-wide"
             >
-              📼 See All Videos
+              Email
+            </Link>
+            <Link
+              href="https://www.instagram.com/couchview.cc/"
+              className="inline-block bg-green-400 text-black hover:bg-green-300 font-bold py-2 px-6 rounded-md border border-green-400 transition-all duration-200 tracking-wide"
+            >
+              Instagram
             </Link>
           </div>
         </section>
